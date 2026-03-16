@@ -6,7 +6,7 @@ export default function Header() {
       <div className="flex items-center gap-3">
         <div className="w-[38px] h-[38px] flex-shrink-0">
           <Image
-            src="/images/thu-logo.svg"
+            src="/images/THU-S.jpg"
             alt="THU Logo"
             width={38}
             height={38}

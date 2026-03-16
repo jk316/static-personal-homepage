@@ -1,4 +1,5 @@
 import PageLayout from '@/components/PageLayout'
+import Image from 'next/image'
 
 export default function TeachingPage() {
   const achievements = [
@@ -10,25 +11,35 @@ export default function TeachingPage() {
 
   const textbooks = [
     {
+      title: '《图论》',
+      image: '/images/图论.jpg',
+      description: '清华大学精品课教材',
+    },
+    {
       title: '《移动互联网：原理、技术与应用》',
+      image: '/images/移动互联网.jpg',
       description:
         '入选"十三五"国家重点出版物出版规划项目、"十二五"普通高等教育本科国家规划教材、获2020年度清华大学优秀教材特等奖、清华大学精品课',
     },
     {
       title: '《视界—"互联网+"时代的创新和创业》',
+      image: '/images/视界封皮.png',
       description:
         '被2016年上海书展暨"书香中国"评选为最不容错过的12本好书',
     },
     {
       title: '《计算机网络原理实验教程》',
+      image: '/images/计算机网络实验.jpg',
       description: '被评为"北京高等教育精品教材"',
     },
     {
       title: '《计算机网络》',
+      image: '/images/计算机网络实验.jpg',
       description: '清华大学精品课教材',
     },
     {
       title: '《下一代互联网与IPv6过渡》',
+      image: '/images/下一代互联网与IPv6过渡.jpg',
       description: '专业参考教材',
     },
   ]
@@ -39,6 +50,9 @@ export default function TeachingPage() {
     '以信息技术视角助力创新创业课程建设. 计算机教育, 2017(1): 175-178',
     '促进教研结合同步提升. 中国高等教育, 2016(23):43-44',
   ]
+
+  const downloadLink =
+    'https://cloud.tsinghua.edu.cn/f/4379a2bac7f84bd19149/?dl=1'
 
   return (
     <PageLayout>
@@ -91,7 +105,7 @@ export default function TeachingPage() {
           <ul className="list-square leading-[26px] lg:leading-[30px] space-y-3">
             <li className="text-gray-700 text-sm lg:text-base">
               <a
-                href="https://cloud.tsinghua.edu.cn/f/4379a2bac7f84bd19149/?dl=1"
+                href={downloadLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-800 hover:text-blue-600 hover:underline"
@@ -109,8 +123,14 @@ export default function TeachingPage() {
               key={index}
               className="flex flex-col items-center space-y-2 w-[120px] lg:w-[160px]"
             >
-              <div className="w-[100px] lg:w-[140px] h-[160px] lg:h-[200px] bg-gray-200 rounded flex items-center justify-center text-gray-500 text-[10px] lg:text-xs text-center px-2">
-                {book.title}
+              <div className="w-[100px] lg:w-[140px] h-[140px] lg:h-[180px] rounded-lg flex items-center justify-center overflow-hidden">
+                <Image
+                  src={book.image}
+                  alt={book.title}
+                  width={140}
+                  height={180}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <p className="text-xs lg:text-sm text-gray-600 text-center leading-tight">
                 {book.description}

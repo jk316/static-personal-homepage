@@ -6,7 +6,7 @@ export default function Profile() {
       {/* Profile Image */}
       <div className="w-full lg:w-[240px] flex-shrink-0 lg:ml-[80px] ml-4 lg:mt-[80px] mt-4">
         <Image
-          src="/images/profile-placeholder.svg"
+          src="/images/cuiyong.jpg"
           alt="崔勇"
           width={220}
           height={280}
